@@ -459,7 +459,7 @@
     {"id":{"name":"input_default_key","path":"scripts/input_default_key/input_default_key.yy",},},
     {"id":{"name":"CREDITS","path":"notes/CREDITS/CREDITS.yy",},},
     {"id":{"name":"grey_button02","path":"sprites/grey_button02/grey_button02.yy",},},
-    {"id":{"name":"Sprite19","path":"sprites/Sprite19/Sprite19.yy",},},
+    {"id":{"name":"sGoblet","path":"sprites/sGoblet/sGoblet.yy",},},
     {"id":{"name":"blue_button13","path":"sprites/blue_button13/blue_button13.yy",},},
     {"id":{"name":"yellow_checkmark","path":"sprites/yellow_checkmark/yellow_checkmark.yy",},},
     {"id":{"name":"sLightMask","path":"sprites/sLightMask/sLightMask.yy",},},

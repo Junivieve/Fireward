@@ -414,7 +414,7 @@
     {"name":"input_default_key","order":5,"path":"scripts/input_default_key/input_default_key.yy",},
     {"name":"CREDITS","order":5,"path":"notes/CREDITS/CREDITS.yy",},
     {"name":"grey_button02","order":69,"path":"sprites/grey_button02/grey_button02.yy",},
-    {"name":"Sprite19","order":6,"path":"sprites/Sprite19/Sprite19.yy",},
+    {"name":"sGoblet","order":6,"path":"sprites/sGoblet/sGoblet.yy",},
     {"name":"blue_button13","order":18,"path":"sprites/blue_button13/blue_button13.yy",},
     {"name":"yellow_checkmark","order":142,"path":"sprites/yellow_checkmark/yellow_checkmark.yy",},
     {"name":"sLightMask","order":10,"path":"sprites/sLightMask/sLightMask.yy",},

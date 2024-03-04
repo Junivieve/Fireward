@@ -33,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Sprite19",
-    "path": "sprites/Sprite19/Sprite19.yy",
+    "name": "sGoblet",
+    "path": "sprites/sGoblet/sGoblet.yy",
   },
   "spriteMaskId": null,
   "visible": true,
