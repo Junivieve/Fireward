@@ -1,0 +1,12 @@
+event_inherited();
+spd = 2;
+dir = 1;
+state = "idle";
+preAttack = false;
+hp = 6;
+grav = 0.2;
+jSpd = 2;
+moveZ = 0;
+hasPlayedAttackSound = false;
+hasPlayedHitSound = false;
+//audio_play_sound(mBgm, 1, true);
