@@ -9,4 +9,4 @@ jSpd = 2;
 moveZ = 0;
 hasPlayedAttackSound = false;
 hasPlayedHitSound = false;
-//audio_play_sound(mBgm, 1, true);
+audio_play_sound(mBgm, 1, true);
