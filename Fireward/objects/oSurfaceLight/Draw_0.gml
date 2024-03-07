@@ -16,6 +16,11 @@ if(surface_exists(surface)) {
 	with(oGoblet) {
 		draw_sprite_ext(sLightMask, 0, x-_cx, y-_cy, 0.5 + random(0.05), 0.5 + random(0.05), 0, c_white, 1);	
 	}
+	
+	with(oOrb) {
+		draw_sprite_ext(sLightMask, 0, x-_cx, y-_cy, 0.25 + random(0.05), 0.25 + random(0.05), 0, c_white, 1);	
+	}
+	
 	gpu_set_blendmode(bm_normal);
 	draw_set_alpha(1);
 	surface_reset_target();

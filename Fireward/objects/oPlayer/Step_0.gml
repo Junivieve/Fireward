@@ -144,6 +144,10 @@ switch(state) {
 		hasPlayedHitSound = false;
 	}
 	break;
+	
+	case "death":
+		sprite_index = sPlayerDeath;
+	break;
 }
 
 if(z > 0) { // in air...
@@ -163,7 +167,13 @@ if(z > 0) { // in air...
 }
 
 if(hp <= 0) {
-	instance_create_layer(0, 0, "DeathWipe", oDeathWipe);	
+	if(instance_number(oOrb) < 6) {
+		repeat(6)  {
+			instance_create_layer(x, y, "Instances", oOrb);	
+		}
+	}
+	state = "death";
+	//instance_create_layer(0, 0, "DeathWipe", oDeathWipe);	
 }
 
 if(keyboard_check_pressed(ord("X"))) {
