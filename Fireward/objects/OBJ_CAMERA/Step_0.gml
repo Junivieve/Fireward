@@ -3,7 +3,9 @@ cy = camera_get_view_y(cam);
 var _panSpeed = 0.0175;
 var _peakSpeed = 0.075;
 var _targetSpeed = 0.05;
+
 global.game_time = ((60/1000000) * delta_time);
+
 switch(mode) {
 	case CAMERA_MODE.FOLLOW_OBJECT:
 		if(!instance_exists(following)) break;
@@ -48,21 +50,23 @@ if(!free) {
 	cx = clamp(cx, 0, room_width-view_w);
 	cy = clamp(cy, 0, room_height-view_h);
 }
-//camera_set_view_size(cam, view_w/2, view_h/2);
-camera_set_view_pos(cam, cx, cy);
 
+view_w = lerp(view_w, target_w, 0.125);
+view_h = lerp(view_h, target_h, 0.125);
+camera_set_view_size(cam, view_w, view_h);
+camera_set_view_pos(cam, cx, cy);
 
 if (shake) { 
    shake_time --; 
    var _xval = choose(-shake_magnitude, shake_magnitude); 
    var _yval = choose(-shake_magnitude, shake_magnitude); 
-   camera_set_view_pos(cam, _xval, _yval);
+   camera_set_view_pos(cam, cx+_xval, cy+_yval);
 
    if (shake_time <= 0) { 
       shake_magnitude -= shake_fade; 
 
       if (shake_magnitude <= 0) { 
-         camera_set_view_pos(cam, 0, 0); 
+         camera_set_view_pos(cam, cx, cy); 
          shake = false; 
       } 
    } 

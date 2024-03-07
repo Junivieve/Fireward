@@ -162,5 +162,20 @@ if(z > 0) { // in air...
 	}
 }
 
+if(hp <= 0) {
+	instance_create_layer(0, 0, "DeathWipe", oDeathWipe);	
+}
 
+if(keyboard_check_pressed(ord("X"))) {
+	if(!instance_exists(oDialogue)) {
+		instance_create_layer(0, 0, "Dialogue", oDialogue);
+		with(OBJ_CAMERA) {
+			if(target_w == base_w) {
+				target_w = base_w/2;
+				target_h = base_h/2;
+				following = oGoblet; 
+			}
+		}
+	}
+}
 
