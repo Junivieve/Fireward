@@ -149,7 +149,11 @@ switch(state) {
 		sprite_index = sPlayerDeath;
 	break;
 }
-
+if(!fall) {
+	moveZ = -200;
+	z = moveZ;
+	fall = true;
+}
 if(z > 0) { // in air...
 	moveZ -= grav;
 	z += moveZ;
@@ -178,13 +182,50 @@ if(hp <= 0) {
 
 if(keyboard_check_pressed(ord("X"))) {
 	if(!instance_exists(oDialogue)) {
-		instance_create_layer(0, 0, "Dialogue", oDialogue);
-		with(OBJ_CAMERA) {
-			if(target_w == base_w) {
-				target_w = base_w/2;
-				target_h = base_h/2;
-				following = oGoblet; 
-			}
+		switch(room) {
+			case LevelTut1:
+				var _d = instance_create_layer(0, 0, "Dialogue", oDialogue);
+				audio_play_sound(mPriestVoice, 1, false);
+				with(OBJ_CAMERA) {
+					if(target_w == base_w) {
+						target_w = base_w/2;
+						target_h = base_h/2;
+						following = oPriest; 
+					}
+				}
+				with(_d) {
+					dialogue =
+					[ 
+						"Tutorus The Accolyte: AHHHH!!",
+						"Tutorus The Accolyte: THE H-H-HE-HERO HAS BEEN SUMMONED!",
+						"Tutorus The Accolyte: This is a grand day, praise be!",
+						"Tutorus The Accolyte: Thy Hero, can you stand!?",
+						"...",
+						"Tutorus The Accolyte: Move around with 'arrow keys'"
+					]	
+				}			
+			break;
+			
+			case Level1:
+				var _d = instance_create_layer(0, 0, "Dialogue", oDialogue);
+				audio_play_sound(mGobletSpeak, 1, false);
+				with(OBJ_CAMERA) {
+					if(target_w == base_w) {
+						target_w = base_w/2;
+						target_h = base_h/2;
+						following = oGoblet; 
+					}
+				}
+				with(_d) {
+					dialogue =
+					[ 
+						"Myria: Hello summoned...",
+						"Myria: The Apoth priests have trapped you here",
+						"Myria: The promise of title 'hero' is not benevolent",
+						"Myria: I can take you home... Sacrifice, and be free"
+					]	
+				}
+			break;
 		}
 	}
 }

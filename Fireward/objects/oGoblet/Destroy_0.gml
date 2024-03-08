@@ -1,0 +1,1 @@
+audio_play_sound(mGobletSpeak, 1, false);
