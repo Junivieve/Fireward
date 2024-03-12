@@ -12,6 +12,27 @@ if(keyboard_check_pressed(ord("X"))) {
 			target_h = base_h;	
 			following = oPlayer; 	
 		}
+		if(room == LevelTut1) {
+			if(!oPlayer.revived) {
+				oPlayer.canMove = true;
+			} else {
+				with(oTransition) {
+					oTransition.mode = TRANS_MODE.NEXT;	
+				}				
+			}
+		}
+		if(room == LevelTut2) {
+			if(!oPlayer.canAttack) {
+				oPlayer.canAttack = true;	
+				oBatDemon.agro = true;
+			} else if(!oPlayer.artifact) {
+				oPlayer.artifact = true;	
+			} else if(oPlayer.hp > 4) {
+				with(oTransition) {
+					oTransition.mode = TRANS_MODE.NEXT;	
+				}	
+			}
+		}
 		instance_destroy();	
 	}
 }

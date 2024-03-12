@@ -37,7 +37,7 @@ if(slideTime <= 0) {
 		break
 		
 		case 3:
-			slideTime = 6.5;
+			slideTime = 7.5;
 		break;
 	}
 	
