@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Fireward",
-    "path": "Fireward.yyp",
+    "name": "Objects",
+    "path": "folders/Objects.yy",
   },
   "parentObjectId": {
     "name": "pDepth",
@@ -33,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Sprite184",
-    "path": "sprites/Sprite184/Sprite184.yy",
+    "name": "sBird",
+    "path": "sprites/sBird/sBird.yy",
   },
   "spriteMaskId": null,
   "visible": true,

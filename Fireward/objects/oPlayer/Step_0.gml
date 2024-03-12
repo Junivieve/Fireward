@@ -1,3 +1,7 @@
+if(hasDied) {
+	exit;	
+}
+
 hsp = keyboard_check(vk_right)-keyboard_check(vk_left);
 vsp = keyboard_check(vk_down)-keyboard_check(vk_up);
 input_jump = keyboard_check_pressed(vk_space);
@@ -33,6 +37,7 @@ switch(state) {
 	break;
 	
 	case "walk":
+
 		if(keyboard_check(vk_up)) {
 			dir = 0;	
 		} else if(keyboard_check(vk_down)) {
@@ -42,6 +47,8 @@ switch(state) {
 		} else if(keyboard_check(vk_right)) {
 			dir = 3;	
 		}
+		
+		var _d = 0;
 		
 		switch(dir) {
 			case 0:
@@ -54,12 +61,28 @@ switch(state) {
 			
 			case 2:
 				sprite_index = sPlayerWalkLeft_strip6;
+				_d = -1;
 			break;
 			
 			case 3:
 				sprite_index = sPlayerWalkRight_strip6;
+				_d = 1;
 			break;
 		}	
+		dustTime -= 0.01 * global.gameTime;
+		if(dustTime <= 0) {
+			canDust = true;	
+			dustTime = 0.5;
+		}
+		if(canDust) {
+			repeat(16) {
+				var _p = CreateParticle(x, y+10, "Part", OBJ_PARTICLE, sWalkDust, irandom(360),0.1, 0.75, 1, c_white, true);
+				_p.depth = depth+50;
+				_p.image_alpha = 0.5;
+				_p.image_blend = $1e253d
+			}
+			canDust = false;
+		}
 		
 		if(hsp == 0 && vsp == 0) {
 			state = "idle";	
@@ -145,8 +168,42 @@ switch(state) {
 	}
 	break;
 	
+	case "heal":
+		switch(dir) {
+		case 0:
+			sprite_index = sPlayerHealUp;
+		break;
+		
+		case 1:
+			sprite_index = sPlayerHealDown;
+		break;
+		
+		case 2:
+			sprite_index = sPlayerHealLeft;
+		break;
+		
+		case 3:
+			sprite_index = sPlayerHealRight;
+		break;
+	}
+	
+	if(image_index >= image_number-1) {
+		if(hsp != 0 or vsp!= 0) {
+			state = "walk";	
+		} else {
+			state = "idle";	
+		}
+		hasPlayedHitSound = false;
+	}
+	break;
+	
 	case "death":
-		sprite_index = sPlayerDeath;
+		if(!hasDied) {
+			instance_create_layer(0, 0, "DeathWipe", oDeathWipe);
+			hasDied = true;
+			var _r = instance_create_layer(0, 0, "DeathWipe", oRevive);
+			_r.depth = -100;
+		}
 	break;
 }
 if(!fall) {
@@ -171,11 +228,6 @@ if(z > 0) { // in air...
 }
 
 if(hp <= 0) {
-	if(instance_number(oOrb) < 6) {
-		repeat(6)  {
-			instance_create_layer(x, y, "Instances", oOrb);	
-		}
-	}
 	state = "death";
 	//instance_create_layer(0, 0, "DeathWipe", oDeathWipe);	
 }
@@ -206,7 +258,7 @@ if(keyboard_check_pressed(ord("X"))) {
 				}			
 			break;
 			
-			case Level1:
+			case BossRoom:
 				var _d = instance_create_layer(0, 0, "Dialogue", oDialogue);
 				audio_play_sound(mGobletSpeak, 1, false);
 				with(OBJ_CAMERA) {

@@ -12,8 +12,8 @@
   "conversionMode": 0,
   "duration": 1.187324,
   "parent": {
-    "name": "Fireward",
-    "path": "Fireward.yyp",
+    "name": "Audio",
+    "path": "folders/Audio.yy",
   },
   "preload": false,
   "sampleRate": 44100,

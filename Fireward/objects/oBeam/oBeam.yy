@@ -6,8 +6,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Fireward",
-    "path": "Fireward.yyp",
+    "name": "Objects",
+    "path": "folders/Objects.yy",
   },
   "parentObjectId": null,
   "persistent": false,
@@ -25,10 +25,7 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": {
-    "name": "Sprite182",
-    "path": "sprites/Sprite182/Sprite182.yy",
-  },
+  "spriteId": null,
   "spriteMaskId": null,
   "visible": true,
 }

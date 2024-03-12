@@ -16,8 +16,8 @@
     "path": "folders/PROTOTYPE.yy",
   },
   "spriteId": {
-    "name": "Sprite_0001",
-    "path": "sprites/Sprite_0001/Sprite_0001.yy",
+    "name": "sTiles",
+    "path": "sprites/sTiles/sTiles.yy",
   },
   "spriteNoExport": false,
   "textureGroupId": {

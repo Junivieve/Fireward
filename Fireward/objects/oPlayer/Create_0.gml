@@ -9,5 +9,7 @@ jSpd = 2;
 moveZ = 0;
 hasPlayedAttackSound = false;
 hasPlayedHitSound = false;
-audio_play_sound(mBgm, 1, true);
+canDust = true;
+dustTime = 0.5;
 fall = false;
+hasDied = false;

@@ -17,7 +17,11 @@ if(surface_exists(surface)) {
 		draw_sprite_ext(sLightMask, 0, x-_cx, y-_cy, 0.5 + random(0.05), 0.5 + random(0.05), 0, c_white, 1);	
 	}
 	
-	with(oOrb) {
+	with(oHealOrb) {
+		draw_sprite_ext(sLightMask, 0, x-_cx, y-_cy, 0.25 + random(0.05), 0.25 + random(0.05), 0, c_white, 1);	
+	}
+	
+	with(oFire) {
 		draw_sprite_ext(sLightMask, 0, x-_cx, y-_cy, 0.25 + random(0.05), 0.25 + random(0.05), 0, c_white, 1);	
 	}
 	

@@ -12,8 +12,8 @@
   "conversionMode": 0,
   "duration": 192.0,
   "parent": {
-    "name": "PROTOTYPE",
-    "path": "folders/PROTOTYPE.yy",
+    "name": "Audio",
+    "path": "folders/Audio.yy",
   },
   "preload": false,
   "sampleRate": 44100,
