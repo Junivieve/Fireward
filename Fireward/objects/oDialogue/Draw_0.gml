@@ -33,6 +33,11 @@ if(keyboard_check_pressed(ord("X"))) {
 				}	
 			}
 		}
+		if(room == Level1) {
+			with(oTransition) {
+				oTransition.mode = TRANS_MODE.NEXT;	
+			}					
+		}
 		instance_destroy();	
 	}
 }

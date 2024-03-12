@@ -46,6 +46,7 @@
     {"name":"sEnemies","order":17,"path":"sprites/sEnemies/sEnemies.yy",},
     {"name":"oChest","order":4,"path":"objects/oChest/oChest.yy",},
     {"name":"sEyeDemon","order":3,"path":"sprites/sEyeDemon/sEyeDemon.yy",},
+    {"name":"Level2","order":7,"path":"rooms/Level2/Level2.yy",},
     {"name":"sTiles","order":14,"path":"sprites/sTiles/sTiles.yy",},
     {"name":"sMenu","order":23,"path":"sprites/sMenu/sMenu.yy",},
     {"name":"sPlayerHealUp","order":27,"path":"sprites/sPlayerHealUp/sPlayerHealUp.yy",},

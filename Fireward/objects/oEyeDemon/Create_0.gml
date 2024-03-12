@@ -1,3 +1,3 @@
 event_inherited();
-hp = 4; 
+hp = 3; 
 z = 3;

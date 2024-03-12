@@ -391,7 +391,7 @@ if(keyboard_check_pressed(ord("X"))) {
 						"Myria: If you sacrifice your lifeforce to me...",
 						"Myria: I can send you home",
 						"Myria needs exactly 2 soul hearts to free themselves",
-						"Use traps, demons and anything else to lower your soul"
+						"Use traps, demons and anything else to lower your soul",
 					]	
 				}
 			break;
