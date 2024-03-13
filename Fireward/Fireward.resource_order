@@ -104,6 +104,7 @@
     {"name":"oBishop","order":26,"path":"objects/oBishop/oBishop.yy",},
     {"name":"sLightMask","order":6,"path":"sprites/sLightMask/sLightMask.yy",},
     {"name":"Intro","order":5,"path":"rooms/Intro/Intro.yy",},
+    {"name":"oHpManager","order":39,"path":"objects/oHpManager/oHpManager.yy",},
     {"name":"oFire","order":33,"path":"objects/oFire/oFire.yy",},
     {"name":"mGobletSpeak","order":2,"path":"sounds/mGobletSpeak/mGobletSpeak.yy",},
     {"name":"oDepthSorter","order":7,"path":"objects/oDepthSorter/oDepthSorter.yy",},

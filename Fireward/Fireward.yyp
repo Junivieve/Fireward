@@ -129,6 +129,7 @@
     {"id":{"name":"oBishop","path":"objects/oBishop/oBishop.yy",},},
     {"id":{"name":"sLightMask","path":"sprites/sLightMask/sLightMask.yy",},},
     {"id":{"name":"Intro","path":"rooms/Intro/Intro.yy",},},
+    {"id":{"name":"oHpManager","path":"objects/oHpManager/oHpManager.yy",},},
     {"id":{"name":"oFire","path":"objects/oFire/oFire.yy",},},
     {"id":{"name":"mGobletSpeak","path":"sounds/mGobletSpeak/mGobletSpeak.yy",},},
     {"id":{"name":"oDepthSorter","path":"objects/oDepthSorter/oDepthSorter.yy",},},

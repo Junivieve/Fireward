@@ -42,6 +42,7 @@ if(priestArrive >= 5) {
 		oPlayer.sprite_index = sPlayerIdleRight_strip12;
 		draw_set_alpha(1);
 		oPlayer.state = "heal";
+		oPlayer.enableDialogue();
 		instance_destroy();
 	}
 }
