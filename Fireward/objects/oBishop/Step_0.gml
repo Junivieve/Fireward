@@ -11,7 +11,7 @@ if(alive) {
 	if(shootTime <= 0) {
 		var _b = instance_create_layer(x, y, "Instances", oHealOrb);
 		_b.direction = irandom_range(minRange, maxRange);
-		shootTime = 0.3;
+		shootTime = 0.5;
 	}
 } else {
 	sprite_index = sPriestStatue;

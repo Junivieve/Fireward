@@ -30,8 +30,7 @@ dir = x > oPlayer.x ? -1 : 1;
 if(hp <= 0) {
 	instance_destroy(oBatBox);	
 	if(room == LevelTut2) {
-		oPlayer.artifact = true;
-		oPlayer.hasD = false;	
+		oPlayer.artifact = true;	
 	}
 	instance_destroy();
 }

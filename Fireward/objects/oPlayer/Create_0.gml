@@ -17,6 +17,7 @@ revived = false;
 canMove = false;	
 canAttack = false;
 artifact = false;
+arrive = false;
 
 switch(room) {
 	case LevelTut1:
@@ -38,16 +39,7 @@ switch(room) {
 		hp = 5;
 	break;
 	
-	case Level2:
-		hasDied = true;
-		revived = true;
-		canMove = true;	
-		canAttack = true;
-		artifact = true;
-		hp = 5;
-	break;
-	
-	case BossRoom:
+	case Bossfight:
 		hasDied = true;
 		revived = true;
 		canMove = true;	
@@ -183,32 +175,63 @@ function enableDialogue() {
 			case Level1:
 				var _d = instance_create_layer(0, 0, "Dialogue", oDialogue);
 				audio_play_sound(mGobletSpeak, 1, false);
-				with(OBJ_CAMERA) {
-					if(target_w == base_w) {
-						target_w = base_w/2;
-						target_h = base_h/2;
-						following = oGoblet; 
+				if(!arrive) {
+					with(OBJ_CAMERA) {
+						if(target_w == base_w) {
+							target_w = base_w/2;
+							target_h = base_h/2;
+							following = oGoblet; 
+						}
 					}
-				}
-				with(_d) {
-					dialogue =
-					[ 
-						"???: Hello summoned...",
-						"???: The Apoth priests have trapped you here",
-						"???: The promise of title 'hero' is not benevolent",
-						"???: I can take you home...",
-						"???: Who am I?..",
-						"Myria: I am the demon queen Myria",
-						"You hear the voice shout proud and firm",
-						"Myria: These lowly rutts managed to trap me in this shrine",
-						"Myria: however the issues of this world, matter not to you",
-						"Myria: your return, your freedom. I can grant",
-						"Myria: These apoth will keep reviving you if you die",
-						"Myria: If you sacrifice your lifeforce to me...",
-						"Myria: I can send you home",
-						"Myria needs exactly 2 soul hearts to free themselves",
-						"Use traps, demons and anything else to lower your soul",
-					]	
+					with(_d) {
+						dialogue =
+						[ 
+							"???: Hello summoned...",
+							"???: The Apoth priests have trapped you here",
+							"???: The promise of title 'hero' is not benevolent",
+							"...",
+							"???: Who am I?..",
+							"Myria: I am the demon queen Myria",
+							"You hear the voice shout proud and firm",
+							"Myria: These lowly rutts managed to trap me in this shrine",
+							"Myria: however the issues of this world, matter not to you",
+							"Myria: your return, your freedom. I can grant",
+							"Myria: These apoth will keep reviving you if you die",
+							"Myria: They offer you treasures...", 
+							"Myria: They offer you false glory",
+							"Myria: Just so they can keep you for themselves",
+							"Myria: These lunatics have slaughtered my kind for centuries",
+							"Myria: You're a hostage, not a hero!",
+							"Myria: ...",
+							"Myria: If you sacrifice your lifeforce to me...",
+							"Myria: I can send you home",
+							"Myria: I just need your soul to help free me from this cage!",
+							"..."
+						]	
+					}
+				} else {
+					with(OBJ_CAMERA) {
+						if(target_w == base_w) {
+							target_w = base_w/2;
+							target_h = base_h/2;
+							following = oArchbishopCutscene; 
+						}
+					}
+					with(_d) {
+						dialogue =
+						[ 
+							"Archbishop: Hero what are you doing?",
+							"Myria: uh oh...",
+							"Archbishop: p-p-PLEASE hero, step away!",
+							"...",
+							"Archbishop: that thing.. there is a demon in there!",
+							"Archbishop: trying to curse your being!",
+							"Archbishop: you are the chosen one!!!",
+							"Archbishop: Please hero, come let me cleans your soul!",
+							"Myria: heh, well... your choice kid.",
+							"..."
+						]	
+					}					
 				}
 			break;
 		}

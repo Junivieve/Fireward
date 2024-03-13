@@ -1,5 +1,5 @@
-state = "bishops";
-
+state = "td";
+bTimer = 0;
 if(audio_is_playing(mBgm)) {
 	audio_stop_sound(mBgm);	
 }

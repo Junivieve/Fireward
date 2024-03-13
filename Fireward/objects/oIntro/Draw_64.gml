@@ -25,19 +25,19 @@ if(alpha == 1) {
 if(slideTime <= 0) {
 	switch(slide) {
 		case 0:
-			slideTime = 5;
+			slideTime = 6;
 		break;
 		
 		case 1:
-			slideTime = 5;
+			slideTime = 7;
 		break;
 		
 		case 2:
-			slideTime = 5;
+			slideTime = 6;
 		break
 		
 		case 3:
-			slideTime = 7.5;
+			slideTime = 11;
 		break;
 	}
 	
