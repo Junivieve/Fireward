@@ -6,7 +6,8 @@ if(point_distance(x, y, x, targetY) < 4) {
 	waitTime -= 0.01 * global.gameTime;	
 }
 
-if(waitTime <= 0) {
+if(waitTime <= 0 && !hasSpoken) {
 	oPlayer.arrive = true;
-	oPlayer.enableDialogue();	
+	oPlayer.enableDialogue();
+	hasSpoken = true;
 }

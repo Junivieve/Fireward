@@ -1,3 +1,3 @@
 dialogue = [];
 text = 1;
-dTime = 2;
+dTime = 0.8;

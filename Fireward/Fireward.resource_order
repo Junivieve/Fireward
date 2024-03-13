@@ -1,12 +1,12 @@
 {
   "FolderOrderSettings": [
+    {"name":"Audio","order":42,"path":"folders/Audio.yy",},
+    {"name":"Objects","order":41,"path":"folders/Objects.yy",},
     {"name":"PLUTOH","order":1,"path":"folders/PLUTOH.yy",},
     {"name":"SCRIPTS","order":2,"path":"folders/PLUTOH/SCRIPTS.yy",},
     {"name":"Player","order":9,"path":"folders/PROTOTYPE/Player.yy",},
-    {"name":"Sprites","order":40,"path":"folders/Sprites.yy",},
-    {"name":"Objects","order":41,"path":"folders/Objects.yy",},
-    {"name":"Audio","order":42,"path":"folders/Audio.yy",},
     {"name":"Rooms","order":43,"path":"folders/Rooms.yy",},
+    {"name":"Sprites","order":40,"path":"folders/Sprites.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"oBird","order":2,"path":"objects/oBird/oBird.yy",},
@@ -80,6 +80,7 @@
     {"name":"sPlayerAttackDown_strip7","order":11,"path":"sprites/sPlayerAttackDown_strip7/sPlayerAttackDown_strip7.yy",},
     {"name":"sPlayerHitRight_strip4","order":2,"path":"sprites/sPlayerHitRight_strip4/sPlayerHitRight_strip4.yy",},
     {"name":"sPlayerDeath","order":23,"path":"sprites/sPlayerDeath/sPlayerDeath.yy",},
+    {"name":"oChoiceWipe","order":42,"path":"objects/oChoiceWipe/oChoiceWipe.yy",},
     {"name":"oPriest","order":18,"path":"objects/oPriest/oPriest.yy",},
     {"name":"sIntro","order":29,"path":"sprites/sIntro/sIntro.yy",},
     {"name":"oBatBox","order":37,"path":"objects/oBatBox/oBatBox.yy",},
@@ -92,6 +93,7 @@
     {"name":"sPlayerIdleDown_strip12","order":9,"path":"sprites/sPlayerIdleDown_strip12/sPlayerIdleDown_strip12.yy",},
     {"name":"sPlayerHitLeft_strip4","order":6,"path":"sprites/sPlayerHitLeft_strip4/sPlayerHitLeft_strip4.yy",},
     {"name":"oBeam","order":1,"path":"objects/oBeam/oBeam.yy",},
+    {"name":"Stone","order":9,"path":"rooms/Stone/Stone.yy",},
     {"name":"oWell","order":14,"path":"objects/oWell/oWell.yy",},
     {"name":"TileSet2","order":21,"path":"tilesets/TileSet2/TileSet2.yy",},
     {"name":"oPlayerDead","order":34,"path":"objects/oPlayerDead/oPlayerDead.yy",},

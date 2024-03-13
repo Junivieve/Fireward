@@ -36,6 +36,13 @@ if(keyboard_check_pressed(ord("X"))) {
 		if(room == Level1) {
 			if(!oPlayer.arrive) {
 				instance_create_layer(room_width/2, -32, "Instances", oArchbishopCutscene);
+			} else {
+				with(OBJ_CAMERA) {
+					target_w = base_w;
+					target_h = base_h;	
+					following = oPlayer; 	
+				}
+				instance_create_layer(0, 0, "DeathWipe", oChoiceWipe);		
 			}
 		}
 		instance_destroy();	

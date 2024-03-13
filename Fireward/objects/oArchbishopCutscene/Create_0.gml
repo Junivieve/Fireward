@@ -3,4 +3,5 @@ event_inherited();
 //image_yscale = 2;
 z = 15;
 targetY = 100;
-waitTime = 2;
+waitTime = 0.6;
+hasSpoken = false;

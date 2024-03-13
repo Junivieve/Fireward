@@ -259,7 +259,7 @@ if(!hasD) {
 if(dTime <= 0) {
 	hasD = true;
 	enableDialogue();
-	dTime = 0.5;
+	dTime = 0.2;
 }
 
 	

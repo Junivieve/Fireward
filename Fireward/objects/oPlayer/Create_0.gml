@@ -206,7 +206,8 @@ function enableDialogue() {
 							"Myria: If you sacrifice your lifeforce to me...",
 							"Myria: I can send you home",
 							"Myria: I just need your soul to help free me from this cage!",
-							"..."
+							"...",
+							"Myria: uh oh...",
 						]	
 					}
 				} else {
@@ -221,7 +222,6 @@ function enableDialogue() {
 						dialogue =
 						[ 
 							"Archbishop: Hero what are you doing?",
-							"Myria: uh oh...",
 							"Archbishop: p-p-PLEASE hero, step away!",
 							"...",
 							"Archbishop: that thing.. there is a demon in there!",
@@ -238,5 +238,5 @@ function enableDialogue() {
 	}	
 }
 	
-dTime = 0.5;
+dTime = 0.2;
 hasD = false;
