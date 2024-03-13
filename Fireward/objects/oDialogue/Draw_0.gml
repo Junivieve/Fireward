@@ -3,8 +3,11 @@ draw_rectangle(OBJ_CAMERA.cx, OBJ_CAMERA.cy, OBJ_CAMERA.cx + OBJ_CAMERA.view_w, 
 draw_rectangle(OBJ_CAMERA.cx, OBJ_CAMERA.cy+OBJ_CAMERA.view_h-16, OBJ_CAMERA.cx + OBJ_CAMERA.view_w, OBJ_CAMERA.cy+OBJ_CAMERA.view_h, false);
 draw_set_color(c_white);
 draw_text_ext_transformed(OBJ_CAMERA.cx + OBJ_CAMERA.view_w/2, OBJ_CAMERA.cy + OBJ_CAMERA.view_h-12, dialogue[text], 0, 400, 0.5, 0.5, 0);
-
+if(!hasdoneX) {
+	draw_text_ext_transformed(OBJ_CAMERA.cx + OBJ_CAMERA.view_w/2, OBJ_CAMERA.cy + OBJ_CAMERA.view_h-15, "Press (X) to continue", 0, 400, 0.25, 0.25, 0);
+}
 if(keyboard_check_pressed(ord("X"))) {
+	hasdoneX = true;
 	text ++;
 	if(text >= array_length(dialogue)) {
 		with(OBJ_CAMERA) {

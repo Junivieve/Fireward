@@ -25,20 +25,16 @@ if(alpha == 1) {
 if(slideTime <= 0) {
 	switch(slide) {
 		case 0:
-			slideTime = 6;
+			slideTime = 9.5;
 		break;
 		
 		case 1:
-			slideTime = 7;
+			slideTime = 6;
 		break;
 		
 		case 2:
-			slideTime = 6;
-		break
-		
-		case 3:
 			slideTime = 11;
-		break;
+		break
 	}
 	
 	fade = true;
