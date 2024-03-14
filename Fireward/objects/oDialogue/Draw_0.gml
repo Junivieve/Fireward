@@ -55,6 +55,18 @@ if(array_length(dialogue) > 0) {
 					oArchBishopStone.petrify();
 				}
 			}
+			if(room == Bossfight) {
+				if(!oPlayer.bossfightStart) {
+					oPlayer.bossfightStart = true;	
+					instance_create_layer(0, 0, "Controllers", oBossfight);
+					repeat(2) {
+						instance_create_layer(irandom_range(48, room_width-48), -32, "Instances", oKamakazi);
+					}
+				}
+			}
+			if(room == Fireward) {
+				instance_create_layer(0, 0, "DeathWipe", oFireWipe);	
+			}
 			instance_destroy();	
 		}
 	}

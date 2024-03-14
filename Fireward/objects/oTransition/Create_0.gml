@@ -13,4 +13,4 @@ enum TRANS_MODE
 }
 mode = TRANS_MODE.INTRO;
 percent = 1;
-target = PlayGround;
+target = Menu;

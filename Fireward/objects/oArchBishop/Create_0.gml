@@ -3,3 +3,6 @@ event_inherited();
 //image_yscale = 2;
 z = 15;
 y = 100;
+shootTime = 0.5;
+shoot = false;
+hasMegad = false;

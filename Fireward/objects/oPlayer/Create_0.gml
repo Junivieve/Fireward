@@ -19,6 +19,7 @@ canAttack = false;
 artifact = false;
 arrive = false;
 stone = 0;
+bossfightStart = false;
 
 switch(room) {
 	case LevelTut1:
@@ -62,6 +63,16 @@ switch(room) {
 		spawned = true;
 		hasDied = true;
 		revived = true;
+	break;
+	
+	case Fireward:
+		canMove = true;
+		canAttack = false;
+		artifact = true;
+		hp = 0;
+		spawned = true;
+		hasDied = true;
+		revived = true;	
 	break;
 }
 	
@@ -240,6 +251,24 @@ function enableDialogue() {
 			}
 			break;
 			
+			case Bossfight:
+				var _d = instance_create_layer(0, 0, "Dialogue", oDialogue);
+				
+				with(_d) {
+					dialogue =
+					[
+						"",
+						"Myria: These lunatics are going to try and put out the flame",
+						"Myria: They wont harm you though, be careful not to get healed",
+						"Myria: I will summon demons to harm you",
+						"Myria: You can use their healing to our advance",
+						"Myria: Revive the demons to bring your sould to 0",
+						"Myria: Dont let those priests get near me!",
+						"Myria: Quickly sacrifice yourself...",
+					];
+				}
+			break;
+			
 			case Stone:
 					with(OBJ_CAMERA) {
 						if(target_w == base_w) {
@@ -326,6 +355,28 @@ function enableDialogue() {
 							break;
 						}
 					}										
+			break;
+			
+			case Fireward:
+				if(fireshrine) {
+					var _d = instance_create_layer(0, 0, "Dialogue", oDialogue);
+					with(OBJ_CAMERA) {
+						if(target_w == base_w) {
+							target_w = base_w/2;
+							target_h = base_h/2;
+							following = oGoblet; 
+						}
+					}				
+					with(_d) {
+						dialogue =
+						[
+							"",
+							"Myria: Thank you hostaged hero,",
+							"Myria: I will now return you to your world as promised",
+							"Myria: Farewell...",
+						];
+					}			
+				}
 			break;
 		}
 	}	

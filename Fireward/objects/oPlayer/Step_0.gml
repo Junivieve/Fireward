@@ -263,7 +263,13 @@ if(hp <= 0 && !hasDied) {
 }
 
 if(hp <= 0 && room != LevelTut1) {
-	room_restart();	
+	if(room == Bossfight) {
+		room_goto(Fireward);	
+	} else {
+		if(room != Fireward) {
+			room_restart();	
+		}
+	}
 }
 
 if(!hasD && spawned) {
@@ -282,7 +288,7 @@ if(createPriest <= 0 && !instance_exists(oPriest) && room == LevelTut1) {
 	instance_create_layer(192, -32, "Instances", oPriest);	
 }
 
-if(room == Level1) {
+if(room == Level1 or room == Fireward) {
 	if(point_distance(x, y, oGoblet.x, oGoblet.y) < 64) {
 		if(!fireshrine) {
 			fireshrine = true;
