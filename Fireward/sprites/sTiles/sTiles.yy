@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "sTiles",
-  "bbox_bottom": 159,
+  "bbox_bottom": 223,
   "bbox_left": 48,
   "bbox_right": 223,
   "bbox_top": 96,

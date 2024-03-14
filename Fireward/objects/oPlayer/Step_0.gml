@@ -213,6 +213,20 @@ switch(state) {
 	}
 	break;
 	
+	case "healStone":
+	sprite_index = sPlayerHealUp;
+	
+	if(image_index >= image_number-1) {
+		state = "stone";
+		hasPlayedHitSound = false;
+	}
+	break;
+	
+	case "stone":
+		sprite_index = sPlayerStone;
+		image_index = stone;
+	break;
+	
 	case "death":
 		if(!hasDied) {
 			instance_create_layer(0, 0, "DeathWipe", oDeathWipe);
@@ -252,7 +266,7 @@ if(hp <= 0 && room != LevelTut1) {
 	room_restart();	
 }
 
-if(!hasD) {
+if(!hasD && spawned) {
 	dTime -= 0.01 * global.gameTime;
 }
 
@@ -262,4 +276,27 @@ if(dTime <= 0) {
 	dTime = 0.2;
 }
 
-	
+createPriest -= 0.01 * global.gameTime;
+
+if(createPriest <= 0 && !instance_exists(oPriest) && room == LevelTut1) {
+	instance_create_layer(192, -32, "Instances", oPriest);	
+}
+
+if(room == Level1) {
+	if(point_distance(x, y, oGoblet.x, oGoblet.y) < 64) {
+		if(!fireshrine) {
+			fireshrine = true;
+			hasD = false;
+			dTime = 0.2;
+			enableDialogue();
+		}
+	}
+}
+
+if(stone > 6) {
+	instance_create_layer(0, 0, "DeathWipe", oStoneWipe);	
+	audio_stop_sound(mBgm);
+	if(!audio_is_playing(mMenu)) {
+		audio_play_sound(mMenu, 1, true);
+	}
+}

@@ -18,19 +18,23 @@ canMove = false;
 canAttack = false;
 artifact = false;
 arrive = false;
+stone = 0;
 
 switch(room) {
 	case LevelTut1:
-		// do nothing.
+		spawned = false;
 	break;
 	
 	case LevelTut2:
+		spawned = true;
 		hasDied = true;
 		revived = true;
 		canMove = true;	
 	break;
 	
 	case Level1:
+		fireshrine = false;
+		spawned = true;
 		hasDied = true;
 		revived = true;
 		canMove = true;	
@@ -40,12 +44,24 @@ switch(room) {
 	break;
 	
 	case Bossfight:
+		spawned = true;
 		hasDied = true;
 		revived = true;
 		canMove = true;	
 		canAttack = true;
 		artifact = true;
 		hp = 5;
+	break;
+	
+	case Stone:
+		state = "stone";
+		canMove = false;
+		canAttack = false;
+		artifact = true;
+		hp = 5;
+		spawned = true;
+		hasDied = true;
+		revived = true;
 	break;
 }
 	
@@ -109,6 +125,7 @@ function enableDialogue() {
 			break;
 			
 			case LevelTut2:
+					if(hp > 4) {
 					var _d = instance_create_layer(0, 0, "Dialogue", oDialogue);
 					audio_play_sound(mPriestVoice, 1, false);
 					with(OBJ_CAMERA) {
@@ -118,22 +135,6 @@ function enableDialogue() {
 							following = oPriest; 
 						}
 					}
-					if(hp < 4) {
-						with(_d) {
-							dialogue =
-							[ 
-								"",
-								"Tutorus The Accolyte: HUZZAH!",
-								"Tutorus The Accolyte: You have slain the demon!",
-								"Tutorus The Accolyte: the people of Myneria are safe now.",
-								"Tutorus The Accolyte: Oh Hero, our savior... ",
-								"...",
-								"Ancient artifact chests can be found in forest pathways.",
-								"Tutorus The Accolyte: Hero! An crate... Claim thy prize.",
-								"Hit the chest to open it.",
-							]	
-						}
-					} else {
 						with(_d) {
 							dialogue =
 							[ 
@@ -150,6 +151,8 @@ function enableDialogue() {
 					}
 				
 				if(!canAttack) {
+					var _d = instance_create_layer(0, 0, "Dialogue", oDialogue);
+					audio_play_sound(mPriestVoice, 1, false);
 					with(OBJ_CAMERA) {
 						if(target_w == base_w) {
 							target_w = base_w/2;
@@ -173,6 +176,7 @@ function enableDialogue() {
 			break;
 			
 			case Level1:
+			if(fireshrine) {
 				var _d = instance_create_layer(0, 0, "Dialogue", oDialogue);
 				audio_play_sound(mGobletSpeak, 1, false);
 				if(!arrive) {
@@ -233,10 +237,101 @@ function enableDialogue() {
 						]	
 					}					
 				}
+			}
+			break;
+			
+			case Stone:
+					with(OBJ_CAMERA) {
+						if(target_w == base_w) {
+							//target_w = base_w/2;
+							//target_h = base_h/2;
+							following = oArchBishopStone; 
+						}
+					}
+					var _d = instance_create_layer(0, 0, "Dialogue", oDialogue);
+					with(_d) {
+						text = 0;
+						switch(oPlayer.stone) {
+							case 0:
+								dialogue =
+								[ 
+									"",
+									"Archbishop: Ah hero, yes this is the way!",
+									"Archbishop: Hero, I've been researching...",
+									"Archbishop: ancient magic, called petrification",
+									"Archbishop: it's told that a hero's soul...",
+									"Archbishop: can ward off demons",
+									"Archbishop: so Hero, we shall perserve your very soul!",
+									"Archbishop: this wont take long..."
+								]	
+							break;
+							
+							case 1:
+								dialogue =
+								[ 
+									"",
+									"Archbishop: your sacrifice will be told in legend",
+									"Archbishop: for years to come!",
+								]								
+							break;
+							
+							case 2:
+								dialogue =
+								[ 
+									"",
+									"Archbishop: ... Tutorus and the others will sing my praises!",
+									"Archbishop: They all said we should trust the hero...",
+								]								
+							break;
+							
+							case 3:
+								dialogue =
+								[ 
+									"",
+									"Archbishop: But i sought your memories...",
+									"Archbishop: I saw the corruption... the delusions",
+								]								
+							break;
+							
+							case 4:
+								dialogue =
+								[ 
+									"",
+									"Archbishop: DEAR HERO, OUR SAVIOR",
+									"Archbishop: we must ensure our safety...",
+									"Archbishop: heavens, you would treat our world",
+									"Archbishop: as a, simple game!?!"
+								]								
+							break;
+							
+							case 5:
+								dialogue =
+								[ 
+									"",
+									"Archbishop: you do understand?",
+									"Archbishop: This was not going to happen!",
+								]								
+							break;
+							
+							case 6:
+								dialogue =
+								[ 
+									"",
+									"Archbishop: Thank you hero, for playing...",
+									"Archbishop: playing my game...",
+									"Archbishop: however, the survival of the Apoth",
+									"Archbishop: is the only thing that matters",
+									"Archbishop: Goodbye, ...Hero"
+								]								
+							break;
+						}
+					}										
 			break;
 		}
 	}	
 }
 	
-dTime = 0.2;
 hasD = false;
+dTime = 0.2;
+createPriest = 1;
+fireshrine = false;
