@@ -132,6 +132,8 @@ switch(state) {
 		}
 		if(place_meeting(x, y, oBatBox)) {
 			var _bb = instance_place(x, y, oBatBox)	;
+			audio_play_sound(mSpikeHit, 1, false)
+			screenshake(2, 1, 1);
 			_bb.owner.hp --;
 		}
 		if(place_meeting(x, y, oChest)) {
@@ -264,6 +266,8 @@ if(hp <= 0 && !hasDied) {
 
 if(hp <= 0 && room != LevelTut1) {
 	if(room == Bossfight) {
+		audio_stop_sound(mBossFight);
+		audio_play_sound(mSacrifice, 1, true);
 		room_goto(Fireward);	
 	} else {
 		if(room != Fireward) {

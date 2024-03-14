@@ -73,6 +73,7 @@
     {"name":"sPriestHeal","order":7,"path":"sprites/sPriestHeal/sPriestHeal.yy",},
     {"name":"sTorch","order":28,"path":"sprites/sTorch/sTorch.yy",},
     {"name":"oBossfight","order":28,"path":"objects/oBossfight/oBossfight.yy",},
+    {"name":"mSacrifice","order":45,"path":"sounds/mSacrifice/mSacrifice.yy",},
     {"name":"sEnemyHealth","order":2,"path":"sprites/sEnemyHealth/sEnemyHealth.yy",},
     {"name":"sTree","order":13,"path":"sprites/sTree/sTree.yy",},
     {"name":"oDialogue","order":8,"path":"objects/oDialogue/oDialogue.yy",},

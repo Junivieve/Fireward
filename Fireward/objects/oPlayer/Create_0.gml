@@ -120,14 +120,13 @@ function enableDialogue() {
 						[ 
 							"",
 							"Tutorus The Accolyte: Oh great Hero! I revived you...",
-							"Spikes deal 1 damage",
 							"Tutorus The Accolyte: Great hero!",
 							"Tutorus The Accolyte: Your strength is unparalleled",
 							"Tutorus The Accolyte: ... Yes, it was due to your strength",
 							"Tutorus The Accolyte: you are able to survive",
-							"you hear a dissonance and a whisper in the distance...",
+							"you hear a voice in the distance...",
 							"???: HAHAHAA yes... PRAISE THE HERO!",
-							"it seems Tutorus did not hear this sound",
+							"it seems Tutorus did not hear this voice",
 							"Tutorus The Accolyte: Please do be careful oh chosen one!'",
 							"Tutorus The Accolyte: Anyway, moving on..."
 						]	
@@ -236,15 +235,16 @@ function enableDialogue() {
 					with(_d) {
 						dialogue =
 						[ 
+							"",
 							"Archbishop: Hero what are you doing?",
 							"Archbishop: p-p-PLEASE hero, step away!",
 							"...",
 							"Archbishop: that thing.. there is a demon in there!",
-							"Archbishop: trying to curse your being!",
+							"Archbishop: trying to curse your soul!",
 							"Archbishop: you are the chosen one!!!",
 							"Archbishop: Please hero, come let me cleans your soul!",
-							"Myria: heh, well... your choice kid.",
-							"..."
+							"...",
+							"Myria: They are delusional... I will save you.",
 						]	
 					}					
 				}
