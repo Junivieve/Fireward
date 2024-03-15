@@ -13,13 +13,19 @@ if(keyboard_check_pressed(vk_left) && option == 2) {
 	option ++;	
 }
 
-if(keyboard_check_pressed(ord("Z"))) {
-	audio_stop_sound(mMenu);
-	audio_play_sound(mBgm, 1, true);
-	room_goto(Level1);
+quiteTime -= 0.01 * global.gameTime;
+if(quiteTime <= 0) {
+	canQuit = true;	
 }
+if(canQuit) {
+	if(keyboard_check_pressed(ord("Z"))) {
+		audio_stop_sound(mMenu);
+		audio_play_sound(mBgm, 1, true);
+		room_goto(Level1);
+	}
 
-if(keyboard_check_pressed(ord("X"))) {
-	audio_stop_all();
-	game_restart();
+	if(keyboard_check_pressed(ord("X"))) {
+		audio_stop_all();
+		game_restart();
+	}
 }
